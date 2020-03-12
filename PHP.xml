@@ -1,0 +1,37 @@
+<templateSet group="PHP Test">
+  <template name="testprov" value="/**&#10; * @return array&#10; */&#10;public function $NAME$Provider()&#10;{&#10;        return [&#10;            [&#10;                [$END$],&#10;                true&#10;            ]&#10;        ];&#10;}" description="data provider" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+      <option name="PHP Trait Member" value="true" />
+    </context>
+  </template>
+  <template name="testmeprov" value="/**&#10; * Test $NAME$ method.&#10; * @param array $params&#10; * @param bool  $expected&#10; * &#10; * @dataProvider $NAME$Provider&#10; */&#10;public function test$NAME$($params, $expected)&#10;{&#10;    &#10;}&#10;&#10;/**&#10; * @return array&#10; */&#10;public function $NAME$Provider()&#10;{&#10;        return [&#10;            [&#10;                [$END$],&#10;                true&#10;            ]&#10;        ];&#10;}" description="test method and data provider" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+      <option name="PHP Trait Member" value="true" />
+    </context>
+  </template>
+  <template name="testme" value="/**&#10; * Test $NAME$ method.&#10; * &#10; * @dataProvider $NAME$Provider&#10; */&#10;public function test$NAME$()&#10;{&#10;    $END$&#10;}" description="test method" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+      <option name="PHP Trait Member" value="true" />
+    </context>
+  </template>
+  <template name="testsetup" value="/**&#10; * @var $NAME$Service|object|null&#10; */&#10;private $service;&#10;&#10;/**&#10; * {@inheritDoc}&#10; */&#10;protected function setUp()&#10;{&#10;    parent::setUp();&#10;    $this-&gt;service = self::$container-&gt;get($END$Service::class);&#10;}" description="test setup" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+      <option name="PHP Trait Member" value="true" />
+    </context>
+  </template>
+  <template name="testmewithoutprovider" value="/**&#10; * Test $NAME$ method.&#10; */&#10;public function test$NAME$()&#10;{&#10;    $END$&#10;}" description="test method without provider" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+      <option name="PHP Trait Member" value="true" />
+    </context>
+  </template>
+</templateSet>
